@@ -14,7 +14,7 @@ public class auto {
             @Override
             public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000") // Set allowed origins from environment variables
+                        .allowedOrigins("https://magenta-kelpie-47e0fc.netlify.app/") // Set allowed origins from environment variables
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
