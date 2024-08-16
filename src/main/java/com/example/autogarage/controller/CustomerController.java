@@ -40,8 +40,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer createCustomer(@RequestBody Customer customer) {
-        return customerService.saveCustomer(customer);
+    public ResponseEntity<?> createCustomer(@RequestBody Customer customer) {
+        Optional<Customer> existingCustomer = customerService.getCustomerByEmail(customer.getEmail());
+        if (existingCustomer.isPresent()) {
+            return ResponseEntity.status(409).body("Email is already associated with an account");
+        }
+        Customer savedCustomer = customerService.saveCustomer(customer);
+        return ResponseEntity.ok(savedCustomer);
     }
 
     @PutMapping("/{id}")
