@@ -14,7 +14,7 @@ public class auto {
             @Override
             public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://auto-garage.netlify.app/") // Set allowed origins from environment variables
+                        .allowedOrigins("https://sweet-bienenstitch-a05851.netlify.app/") // Set allowed origins from environment variables
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
